@@ -1,0 +1,23 @@
+scripts/install.sh
+  892672044dc0258e 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "e143a7a3752c09c95d4ab8db36c19a397260f4c4",
+  "prompts": {
+    "892672044dc0258e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac83f569-769a-454c-ae64-49188b94b776",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
