@@ -1,0 +1,25 @@
+LICENSE
+  892672044dc0258e 1-21
+readme.md
+  892672044dc0258e 1,3,5,7-10,12-15,17-20,22,24,26-28,31,33-34,39-40,45-47,49,51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "a1323f9d6dbc27ce23561fe95d4a8d72f240e984",
+  "prompts": {
+    "892672044dc0258e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac83f569-769a-454c-ae64-49188b94b776",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 51,
+      "total_deletions": 116,
+      "accepted_lines": 51,
+      "overriden_lines": 0
+    }
+  }
+}
