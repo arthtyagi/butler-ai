@@ -9,7 +9,7 @@ Butler AI automates routine tasks through browser automation, starting with groc
 ## Prerequisites
 
 - **Node.js 18+**
-- **Playwright or Playwriter MCP** - Browser automation runtime
+- **Playwright or [Playwriter MCP](https://github.com/remorses/playwriter)** - Browser automation runtime
 - **Active browser session** - Logged into services you want to automate (e.g., Zepto for grocery)
 
 ### Browser Setup
