@@ -1,11 +1,6 @@
 ---
 name: zepto-automation
 description: "Automate Zepto grocery orders via Playwright browser automation. Use when user asks to search products, add items to cart, check cart contents, select delivery address, order groceries, buy food, or debug Zepto automation issues. Triggers on: grocery shopping, Zepto, food delivery, cart management, product search."
-allowed-tools:
-  - playwriter_execute
-  - playwriter_reset
-  - Read
-  - Bash
 ---
 
 # Zepto Grocery Automation
