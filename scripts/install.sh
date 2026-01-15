@@ -6,6 +6,7 @@ set -e
 # Usage: curl -fsSL https://raw.githubusercontent.com/arthtyagi/butler-ai/main/scripts/install.sh | sh
 
 REPO="arthtyagi/butler-ai"
+SKILLS="zepto-automation"
 
 # Check for jq
 if ! command -v jq >/dev/null 2>&1; then
@@ -25,12 +26,46 @@ echo "=== Butler AI Installer ==="
 echo ""
 
 # --- Skills Installation ---
-echo "[1/2] Installing skills..."
-npx -y add-skill "$REPO" -y -a claude-code cursor codex opencode -s zepto-automation </dev/null
+echo "[1/3] Installing skills..."
+npx -y add-skill "$REPO" -y -a claude-code cursor codex opencode -s $SKILLS </dev/null
+echo ""
+
+# --- OpenCode Workaround: Symlink skills to ~/.claude/skills/ ---
+# OpenCode has a bug where it only loads skills from ~/.claude/skills/
+# not from project-level .opencode/skill/ directories
+# See: INVESTIGATION-opencode-skill-loading.md
+echo "[2/3] Symlinking skills for OpenCode compatibility..."
+CLAUDE_SKILLS_DIR="$HOME/.claude/skills"
+mkdir -p "$CLAUDE_SKILLS_DIR"
+
+for skill in $SKILLS; do
+  # Source: where add-skill installs OpenCode skills
+  src="$HOME/.opencode/skill/$skill"
+  dst="$CLAUDE_SKILLS_DIR/$skill"
+  
+  if [ -d "$src" ]; then
+    if [ -L "$dst" ]; then
+      echo "  ↻ $skill (symlink exists)"
+    elif [ -d "$dst" ]; then
+      echo "  ⚠ $skill (directory exists, skipping)"
+    else
+      ln -s "$src" "$dst"
+      echo "  ✓ $skill → $dst"
+    fi
+  else
+    # Fallback: try .claude/skills source (add-skill may use this)
+    alt_src="$HOME/.claude/skills/$skill"
+    if [ -d "$alt_src" ]; then
+      echo "  ✓ $skill (already in ~/.claude/skills/)"
+    else
+      echo "  ⚠ $skill (source not found, skipping)"
+    fi
+  fi
+done
 echo ""
 
 # --- MCP Configuration ---
-echo "[2/2] Configuring MCP dependencies..."
+echo "[3/3] Configuring MCP dependencies..."
 
 # Playwriter config for standard MCP format
 PLAYWRITER_STD='{"command":"bunx","args":["-y","playwriter@latest"]}'
