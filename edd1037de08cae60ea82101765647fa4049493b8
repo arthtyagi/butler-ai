@@ -1,0 +1,80 @@
+.claude/skills/zepto-automation/SKILL.md
+  53e342655aeb7522 103-127,138-139
+  59aa00d8de998c62 52-55
+  dc6553bea4e17f77 89-90
+  c7593d884cc89592 161-164,167-170
+.claude/skills/zepto-automation/operations.md
+  4bb377df95623db5 307-469
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "edd1037de08cae60ea82101765647fa4049493b8",
+  "prompts": {
+    "4bb377df95623db5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_43fd8a057ffeJwy8VqNrObivCG-29254d95-4a7f-4d99-9e67-3b6ca85f8130",
+        "model": "unknown"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 163,
+      "total_deletions": 0,
+      "accepted_lines": 163,
+      "overriden_lines": 0
+    },
+    "53e342655aeb7522": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_43fd8a057ffeJwy8VqNrObivCG-2f20422d-3f9c-41d5-849d-245e50c08260",
+        "model": "unknown"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 27,
+      "total_deletions": 0,
+      "accepted_lines": 27,
+      "overriden_lines": 0
+    },
+    "59aa00d8de998c62": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_43fd8a057ffeJwy8VqNrObivCG-bb0a28c3-51c1-48f1-a8b8-9ac94f4485a5",
+        "model": "unknown"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 2,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    },
+    "c7593d884cc89592": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_43fd8a057ffeJwy8VqNrObivCG-1c18d009-086b-4170-bc6a-35a0e58813dc",
+        "model": "unknown"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 2,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    },
+    "dc6553bea4e17f77": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_43fd8a057ffeJwy8VqNrObivCG-60a1de1f-02d6-4052-b81a-baf7f37e8c2c",
+        "model": "unknown"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}
