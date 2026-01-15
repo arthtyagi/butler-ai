@@ -1,0 +1,25 @@
+readme.md
+  892672044dc0258e 5,7-15,45,70
+scripts/install.sh
+  892672044dc0258e 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "a4c1b38950d6b33a492a6814b30a037cd93f18de",
+  "prompts": {
+    "892672044dc0258e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac83f569-769a-454c-ae64-49188b94b776",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 94,
+      "total_deletions": 17,
+      "accepted_lines": 94,
+      "overriden_lines": 0
+    }
+  }
+}
