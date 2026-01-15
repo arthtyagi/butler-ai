@@ -1,6 +1,6 @@
 # Butler AI
 
-![Butler AI Banner](banner.png)
+![Butler AI Banner](https://bfq19ar33r7ynbpv.public.blob.vercel-storage.com/butler-ai%20Large.jpeg)
 
 AI-powered personal assistant with browser automation capabilities for everyday tasks.
 
