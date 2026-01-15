@@ -1,6 +1,6 @@
 # Butler Skills
 
-Minimal, installable skillset for Butler AI. Ships only Zepto grocery automation.
+Minimal, installable skillset for Butler AI browser automation.
 
 ## Installation
 
@@ -19,18 +19,38 @@ Minimal, installable skillset for Butler AI. Ships only Zepto grocery automation
 > pnpm dlx add-skill arthtyagi/butler-ai
 > ```
 
-Interactive installer supports Cursor, VS Code, Claude Code.
+Interactive installer supports Cursor, VS Code, Claude Code, Codex CLI, OpenCode.
+
+### Stable Releases
+
+Pin to a specific version:
+
+```bash
+npx add-skill arthtyagi/butler-ai@v0.1.0
+```
+
+## MCP
+
+Install required MCP dependencies:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arthtyagi/butler-ai/main/scripts/install-mcp.sh | sh
+```
+
+Configures Cursor, Claude Code, Codex CLI, and OpenCode. Restart your editor after.
 
 ## Directory Structure
 
 ```text
 skills/
 └── zepto-automation/   # Zepto search/cart/address automation
+scripts/
+├── sync-skills         # Sync source → distribution
+└── install-mcp.sh      # Install MCP dependencies
 ```
 
 ## Requirements
 
-- Playwriter MCP (or compatible Playwright MCP)
 - Active Zepto login in a browser tab
 
 ## Usage
@@ -42,10 +62,17 @@ skills/
 
 ## Development
 
-- `.claude/skills/` is the source of truth
-- `skills/` is the distribution surface for `add-skill`
-- Sync: `cp -R .claude/skills/zepto-automation skills/`
+- `.claude/skills/zepto-automation` is the source of truth
+- `skills/` and `.opencode/skill/` are distribution targets
+- Sync: `./scripts/sync-skills`
+- Check parity: `./scripts/sync-skills --check`
+
+CI runs parity check on every PR.
 
 ## More Skills
 
 Install the full skillset + dogfood setup: https://github.com/fluid-tools/claude-skills
+
+## License
+
+MIT

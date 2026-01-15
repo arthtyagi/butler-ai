@@ -72,3 +72,7 @@ temp
 .github/skills/*
 !.github/skills/zepto-automation/
 !.github/skills/zepto-automation/**
+
+# Installer-generated MCP configs (run ./scripts/install-mcp)
+.cursor/mcp.json
+.codex/mcp.json

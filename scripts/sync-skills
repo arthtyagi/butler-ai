@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Sync skills from source (.claude/skills/zepto-automation) to distribution targets
+# Usage:
+#   ./scripts/sync-skills          # Sync files
+#   ./scripts/sync-skills --check  # Check parity (CI mode, exits 1 on diff)
+
+SOURCE_DIR=".claude/skills/zepto-automation"
+TARGETS=(
+  "skills/zepto-automation"
+  ".opencode/skill/zepto-automation"
+)
+
+CHECK_MODE=false
+if [[ "${1:-}" == "--check" ]]; then
+  CHECK_MODE=true
+fi
+
+cd "$(git rev-parse --show-toplevel)"
+
+if [[ ! -d "$SOURCE_DIR" ]]; then
+  echo "Error: Source directory '$SOURCE_DIR' not found"
+  exit 1
+fi
+
+has_diff=false
+
+for target in "${TARGETS[@]}"; do
+  if $CHECK_MODE; then
+    # Check mode: compare source and target
+    if [[ ! -d "$target" ]]; then
+      echo "MISSING: $target"
+      has_diff=true
+      continue
+    fi
+    
+    diff_output=$(diff -rq "$SOURCE_DIR" "$target" 2>/dev/null || true)
+    if [[ -n "$diff_output" ]]; then
+      echo "DIFF: $target"
+      echo "$diff_output"
+      has_diff=true
+    else
+      echo "OK: $target"
+    fi
+  else
+    # Sync mode: copy source to target
+    mkdir -p "$target"
+    rm -rf "$target"/*
+    cp -R "$SOURCE_DIR"/* "$target"/
+    echo "SYNCED: $target"
+  fi
+done
+
+if $CHECK_MODE && $has_diff; then
+  echo ""
+  echo "Parity check failed. Run './scripts/sync-skills' to sync."
+  exit 1
+fi
+
+echo "Done."

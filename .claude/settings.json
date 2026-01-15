@@ -34,8 +34,7 @@
   },
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true,
-    "adversarial-spec@adversarial-spec": true
+    "ralph-loop@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true
 }
