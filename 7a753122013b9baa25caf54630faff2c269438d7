@@ -1,0 +1,29 @@
+BUG-REPORT-opencode-skills.md
+  126c2f837447a897 1-126
+INVESTIGATION-opencode-skill-loading.md
+  126c2f837447a897 1-191
+scripts/fix-opencode-skills.sh
+  126c2f837447a897 1-138
+scripts/install.sh
+  126c2f837447a897 9,29-30,33-64,68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "7a753122013b9baa25caf54630faff2c269438d7",
+  "prompts": {
+    "126c2f837447a897": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5df159c7-242d-47b6-80c8-f55adbc320f8",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 493,
+      "total_deletions": 3,
+      "accepted_lines": 493,
+      "overriden_lines": 0
+    }
+  }
+}
