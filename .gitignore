@@ -50,3 +50,13 @@ tmp
 temp
 
 .sisyphus
+
+# Claude skills (keep zepto only)
+.claude/skills/*
+!.claude/skills/zepto-automation/
+!.claude/skills/zepto-automation/**
+
+# OpenCode skills (keep zepto only)
+.opencode/skill/*
+!.opencode/skill/zepto-automation/
+!.opencode/skill/zepto-automation/**

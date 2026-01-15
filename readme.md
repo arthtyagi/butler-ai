@@ -59,29 +59,15 @@ butler-ai/
 
 ## Claude Skills
 
-This project includes Claude Agent Skills in `.claude/skills/`:
-
-### Butler AI Skills
-
-These are the core skills that power Butler AI's automation capabilities:
+This repo tracks only Butler skills in `.claude/skills/` and `.opencode/skill/`:
 
 | Skill | Purpose |
 |-------|---------|
 | **zepto-automation** | Browser automation for Zepto grocery delivery - search, cart, checkout |
 
-### Helper Skills
+### External Skills
 
-These skills assist in building and maintaining Butler AI but aren't part of the core automation:
-
-| Skill | Purpose |
-|-------|---------|
-| vercel-ai-sdk | AI SDK v6 patterns for building AI features |
-| vercel-react-best-practices | React/Next.js performance optimization |
-| react-useeffect | React hooks best practices |
-| planning-with-files | Structured task planning workflow |
-| convex-* | Convex backend patterns (various skills) |
-| typescript-strict-mode | TypeScript best practices |
-| web-design-guidelines | UI/UX design patterns |
+Non-Butler skills (including extra OpenCode skills) are intentionally ignored here. Install the rest from the partner repo: https://github.com/fluid-tools/claude-skills (dogfood setup + helpers like `vercel-ai-sdk`, `react-useeffect`, `planning-with-files`, `convex-*`, `typescript-strict-mode`, `web-design-guidelines`).
 
 ## Usage
 
