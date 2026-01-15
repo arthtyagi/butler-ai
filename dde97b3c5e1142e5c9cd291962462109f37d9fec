@@ -1,0 +1,25 @@
+readme.md
+  892672044dc0258e 62,68,70
+.gitignore
+  892672044dc0258e 53-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "dde97b3c5e1142e5c9cd291962462109f37d9fec",
+  "prompts": {
+    "892672044dc0258e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac83f569-769a-454c-ae64-49188b94b776",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 16,
+      "total_deletions": 20,
+      "accepted_lines": 13,
+      "overriden_lines": 0
+    }
+  }
+}
