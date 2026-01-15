@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "cfda9c627654e0a5d04db6a62669e94cf7bf3596",
+  "prompts": {
+    "0d5e1c0a005df652": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "d580335a-7bac-4ced-8551-431372f17f84",
+        "model": "gpt-5.2-codex-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 46,
+      "total_deletions": 4,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
