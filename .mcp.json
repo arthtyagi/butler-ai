@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "playwriter": {
+      "command": "bunx",
+      "args": ["-y", "playwriter@latest"]
+    },
+    "next-devtools": {
+      "command": "bunx",
+      "args": ["-y", "next-devtools-mcp@latest"],
+      "env": {
+        "NEXT_TELEMETRY_DISABLED": "1"
+      }
+    },
+    "convex": {
+      "command": "bunx",
+      "args": ["-y", "convex@latest", "mcp", "start"]
+    }
+  }
+}
