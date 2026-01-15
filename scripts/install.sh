@@ -4,19 +4,8 @@ set -e
 # Butler AI - Unified Installer
 # Installs skills + MCP dependencies (merges, doesn't overwrite)
 # Usage: curl -fsSL https://raw.githubusercontent.com/arthtyagi/butler-ai/main/scripts/install.sh | sh
-#        curl ... | sh -s -- --opencode-fix   # Auto-apply OpenCode workaround
 
 REPO="arthtyagi/butler-ai"
-SKILLS="zepto-automation"
-OPENCODE_FIX=""
-
-# Parse arguments
-for arg in "$@"; do
-  case "$arg" in
-    --opencode-fix) OPENCODE_FIX="yes" ;;
-    --no-opencode-fix) OPENCODE_FIX="no" ;;
-  esac
-done
 
 # Check for jq
 if ! command -v jq >/dev/null 2>&1; then
@@ -37,7 +26,7 @@ echo ""
 
 # --- Skills Installation ---
 echo "[1/2] Installing skills..."
-npx -y add-skill "$REPO" -y -a claude-code cursor codex opencode -s $SKILLS </dev/null
+npx -y add-skill "$REPO" -y -a claude-code cursor codex opencode -s zepto-automation </dev/null
 echo ""
 
 # --- MCP Configuration ---
@@ -89,66 +78,6 @@ merge_mcp_standard ".codex/mcp.json"
 
 # OpenCode
 merge_mcp_opencode "opencode.jsonc"
-
-echo ""
-
-# --- Optional: OpenCode Workaround ---
-# OpenCode has a bug where it only loads skills from ~/.claude/skills/
-# not from project-level .opencode/skill/ directories
-# See: INVESTIGATION-opencode-skill-loading.md
-
-apply_opencode_fix() {
-  echo ""
-  echo "[Optional] Applying OpenCode workaround..."
-  CLAUDE_SKILLS_DIR="$HOME/.claude/skills"
-  mkdir -p "$CLAUDE_SKILLS_DIR"
-
-  for skill in $SKILLS; do
-    src="$HOME/.opencode/skill/$skill"
-    dst="$CLAUDE_SKILLS_DIR/$skill"
-    
-    if [ -d "$src" ]; then
-      if [ -L "$dst" ]; then
-        echo "  ↻ $skill (symlink exists)"
-      elif [ -d "$dst" ]; then
-        echo "  ⚠ $skill (directory exists, skipping)"
-      else
-        ln -s "$src" "$dst"
-        echo "  ✓ $skill → $dst"
-      fi
-    else
-      alt_src="$HOME/.claude/skills/$skill"
-      if [ -d "$alt_src" ]; then
-        echo "  ✓ $skill (already in ~/.claude/skills/)"
-      else
-        echo "  ⚠ $skill (source not found)"
-      fi
-    fi
-  done
-}
-
-if [ "$OPENCODE_FIX" = "yes" ]; then
-  apply_opencode_fix
-elif [ "$OPENCODE_FIX" != "no" ]; then
-  # Interactive prompt (only if not piped and terminal available)
-  if [ -t 0 ] && [ -t 1 ]; then
-    echo ""
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo "OpenCode has a known bug where project-level skills"
-    echo "are not loaded. A workaround is to symlink skills to"
-    echo "~/.claude/skills/ (where OpenCode does look)."
-    echo ""
-    echo "This creates symlinks, not copies. To undo later:"
-    echo "  rm ~/.claude/skills/zepto-automation"
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    printf "Apply OpenCode workaround? [y/N] "
-    read -r response
-    case "$response" in
-      [yY]|[yY][eE][sS]) apply_opencode_fix ;;
-      *) echo "Skipped. Run './scripts/fix-opencode-skills.sh' later if needed." ;;
-    esac
-  fi
-fi
 
 echo ""
 echo "=== Done ==="
