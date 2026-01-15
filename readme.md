@@ -2,7 +2,17 @@
 
 Minimal, installable skillset for Butler AI browser automation.
 
-## Installation
+## Quick Start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arthtyagi/butler-ai/main/scripts/install.sh | sh
+```
+
+Installs skills + MCP dependencies. Requires `jq` and `npx`.
+
+## Manual Install
+
+### Skills Only
 
 > **npm**
 > ```bash
@@ -19,25 +29,11 @@ Minimal, installable skillset for Butler AI browser automation.
 > pnpm dlx add-skill arthtyagi/butler-ai
 > ```
 
-Interactive installer supports Cursor, VS Code, Claude Code, Codex CLI, OpenCode.
-
 ### Stable Releases
-
-Pin to a specific version:
 
 ```bash
 npx add-skill arthtyagi/butler-ai@v0.1.0
 ```
-
-## MCP
-
-Install required MCP dependencies:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/arthtyagi/butler-ai/main/scripts/install-mcp.sh | sh
-```
-
-Configures Cursor, Claude Code, Codex CLI, and OpenCode. Restart your editor after.
 
 ## Directory Structure
 
@@ -46,7 +42,7 @@ skills/
 └── zepto-automation/   # Zepto search/cart/address automation
 scripts/
 ├── sync-skills         # Sync source → distribution
-└── install-mcp.sh      # Install MCP dependencies
+└── install.sh          # Unified installer (skills + MCP)
 ```
 
 ## Requirements
@@ -71,7 +67,7 @@ CI runs parity check on every PR.
 
 ## More Skills
 
-Install the full skillset + dogfood setup: https://github.com/fluid-tools/claude-skills
+Full skillset + dogfood setup: https://github.com/fluid-tools/claude-skills
 
 ## License
 
