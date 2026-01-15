@@ -1,0 +1,35 @@
+.gitignore
+  892672044dc0258e 75-78
+.github/workflows/release.yml
+  892672044dc0258e 1-42
+.github/workflows/skills-parity.yml
+  892672044dc0258e 1-16
+scripts/sync-skills
+  892672044dc0258e 1-61
+readme.md
+  892672044dc0258e 3,22,24-40,47-49,65-68,70,75-78
+opencode.jsonc
+  892672044dc0258e 8-9,13,17
+scripts/install-mcp.sh
+  892672044dc0258e 1-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "43db874800b471172a46dd3c80f1b6dd41c44eea",
+  "prompts": {
+    "892672044dc0258e": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac83f569-769a-454c-ae64-49188b94b776",
+        "model": "gpt-5.2-codex-xhigh-fast"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 335,
+      "total_deletions": 32,
+      "accepted_lines": 305,
+      "overriden_lines": 4
+    }
+  }
+}
