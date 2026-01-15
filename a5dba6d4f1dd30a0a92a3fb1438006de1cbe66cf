@@ -1,0 +1,23 @@
+.mcp.json
+  c13df1ff64c3fe78 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "a5dba6d4f1dd30a0a92a3fb1438006de1cbe66cf",
+  "prompts": {
+    "c13df1ff64c3fe78": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "972a0d82-c4c4-4a34-839f-6af5f61e7fb0",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "arthtyagi <arthtyagi7@icloud.com>",
+      "messages": [],
+      "total_additions": 19,
+      "total_deletions": 0,
+      "accepted_lines": 19,
+      "overriden_lines": 0
+    }
+  }
+}
