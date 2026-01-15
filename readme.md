@@ -36,7 +36,7 @@ skills/
 ## Usage
 
 ```
-"Add hokkaido mango mix and 2 pepsi black to my Zepto cart"
+"Get me a White Monster and some protein bars. pay-on-delivery."
 "What's in my Zepto cart?"
 ```
 
