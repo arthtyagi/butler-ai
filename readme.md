@@ -1,5 +1,7 @@
 # Butler AI
 
+![Butler AI Banner](banner.png)
+
 AI-powered personal assistant with browser automation capabilities for everyday tasks.
 
 ## Overview
