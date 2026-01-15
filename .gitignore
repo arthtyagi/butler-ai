@@ -60,3 +60,15 @@ temp
 .opencode/skill/*
 !.opencode/skill/zepto-automation/
 !.opencode/skill/zepto-automation/**
+
+.codex/skills/*
+!.codex/skills/zepto-automation/
+!.codex/skills/zepto-automation/**
+
+.cursor/skills/*
+!.cursor/skills/zepto-automation/
+!.cursor/skills/zepto-automation/**
+
+.github/skills/*
+!.github/skills/zepto-automation/
+!.github/skills/zepto-automation/**
