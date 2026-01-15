@@ -26,7 +26,7 @@ echo ""
 
 # --- Skills Installation ---
 echo "[1/2] Installing skills..."
-npx -y add-skill "$REPO"
+npx -y add-skill "$REPO" -y -a claude-code cursor codex opencode
 echo ""
 
 # --- MCP Configuration ---
