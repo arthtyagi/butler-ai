@@ -138,7 +138,8 @@ elif [ "$OPENCODE_FIX" != "no" ]; then
     echo "are not loaded. A workaround is to symlink skills to"
     echo "~/.claude/skills/ (where OpenCode does look)."
     echo ""
-    echo "This creates symlinks, not copies. Safe and reversible."
+    echo "This creates symlinks, not copies. To undo later:"
+    echo "  rm ~/.claude/skills/zepto-automation"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     printf "Apply OpenCode workaround? [y/N] "
     read -r response

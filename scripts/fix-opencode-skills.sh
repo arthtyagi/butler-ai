@@ -60,7 +60,8 @@ echo "This script creates symlinks from your installed skills to"
 echo "~/.claude/skills/ where OpenCode can find them."
 echo ""
 echo "This is a workaround for an OpenCode bug. Symlinks are safe"
-echo "and can be removed anytime with: rm ~/.claude/skills/<name>"
+echo "and reversible — to undo, just delete the symlink:"
+echo "  rm ~/.claude/skills/zepto-automation  (example)"
 echo ""
 
 if [ "$SKIP_CONFIRM" != "yes" ] && [ -t 0 ] && [ -t 1 ]; then
